@@ -1,24 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title th:text="#{view.index.title}">Welcome!</title>
+    <title>Обучение программированию на JAVA</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
-    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}"/>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
 </head>
 <body>
+
 <div th:replace="fragments/header :: header">&nbsp;</div>
-<div class="container">
-    <!-- /* Handle the flash message */-->
-    <th:block th:if="${message != null}">
-        <!-- /* The message code is returned from the @Controller */ -->
-        <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>
-    </th:block>
-    <p>
-        Welcome to the Spring MVC Quickstart application!
-    </p>
+<div class="jumbotron-blue">
+    <div class="container">
+        <!-- /* Handle the flash message */-->
+        <th:block th:if="${message != null}">
+            <!-- /* The message code is returned from the @Controller */ -->
+            <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)},
+            message=#{${message.message}(${#authentication.name})})">
+                &nbsp;</div>
+        </th:block>
+
+
+        <ul>
+            <li><a href="#">Level 1</a></li>
+            <li><a href="#">Level 2</a></li>
+            <li><a href="#">Level 3</a></li>
+            <li>
+                <a href="#">Посмотреть предыдущие уроки</a>
+            </li>
+        </ul>
+    </div>
 </div>
+
+<div class="jumbotron-orange"> Данные о пользователе
+    <div th:object="${session.account}">
+        <p>Name: <span th:text="${session.account.getId}">Sebastian</span>.</p>
+
+        <p>Surname: <span th:text="${session.account.getEmail}">Pepper</span>.</p>
+    </div>
+
+</div>
+<div class="jumbotron">Другие данные</div>
+
+<div th:replace="fragments/footer :: footer">&copy;</div>
+
 </body>
 </html>

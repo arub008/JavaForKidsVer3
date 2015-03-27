@@ -45,6 +45,7 @@ class WebMvcConfig extends WebMvcConfigurationSupport {
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setBasename(MESSAGE_SOURCE);
+        messageSource.setDefaultEncoding("UTF-8");
         messageSource.setCacheSeconds(5);
         return messageSource;
     }
@@ -52,6 +53,7 @@ class WebMvcConfig extends WebMvcConfigurationSupport {
     @Bean
     public TemplateResolver templateResolver() {
         TemplateResolver templateResolver = new ServletContextTemplateResolver();
+        templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setPrefix(VIEWS);
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode("HTML5");
