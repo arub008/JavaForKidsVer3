@@ -13,25 +13,70 @@
 <form class="form-narrow form-horizontal" method="post" th:action="@{/signup}" th:object="${signupForm}">
     <!-- /* Show general error message when form contains errors */ -->
     <th:block th:if="${#fields.hasErrors('${signupForm.*}')}">
-        <div th:replace="fragments/alert :: alert (type='danger', message='Form contains errors. Please try again.')">Alert</div>
+        <div th:replace="fragments/alert :: alert (type='danger', message='В форме есть ошибки. Попробуйте снова.')">
+            Alert
+        </div>
     </th:block>
     <fieldset>
         <legend>Регистрация</legend>
+
+
+        <div class="form-group" th:classappend="${#fields.hasErrors('surname')}? 'has-error'">
+            <label for="surname" class="col-lg-2 control-label">Фамилия</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="surname" placeholder="Фамилия" th:field="*{surname}"/>
+            </div>
+        </div>
+
+        <div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'has-error'">
+            <label for="name" class="col-lg-2 control-label">Имя</label>
+
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="name" placeholder="Имя" th:field="*{name}"/>
+            </div>
+        </div>
+
+
+        <div class="form-group" th:classappend="${#fields.hasErrors('middlename')}? 'has-error'">
+            <label for="middlename" class="col-lg-2 control-label">Отчество</label>
+
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="middlename" placeholder="Отчество"
+                       th:field="*{middlename}"/>
+            </div>
+        </div>
+
         <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error'">
             <label for="email" class="col-lg-2 control-label">Email</label>
+
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="email" placeholder="Email address" th:field="*{email}" />
+                <input type="text" class="form-control" id="email" placeholder="Email address" th:field="*{email}"/>
                 <span class="help-block" th:if="${#fields.hasErrors('email')}"
                       th:errors="*{email}">Неверный емайл</span>
             </div>
         </div>
+
+
         <div class="form-group" th:classappend="${#fields.hasErrors('password')}? 'has-error'">
             <label for="password" class="col-lg-2 control-label">Пароль</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" id="password" placeholder="Password" th:field="*{password}"/>
-                <span class="help-block" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Неверный пароль</span>
+                <input type="password" class="form-control" id="password" placeholder="Пароль" th:field="*{password}"/>
+              <span class="help-block" th:if="${#fields.hasErrors('password')}"
+                    th:errors="*{password}">Неверный пароль</span>
             </div>
         </div>
+
+        <div class="form-group" th:classappend="${#fields.hasErrors('retypePassword')}? 'has-error'">
+            <label for="retypePassword" class="col-lg-2 control-label"></label>
+
+            <div class="col-lg-10">
+                <input type="password" class="form-control" id="retypePassword" placeholder="Повторить пароль"
+                       th:field="*{retypePassword}"/>
+                <span class="help-block" th:if="${#fields.hasErrors('retypePassword')}" th:errors="*{retypePassword}">Пароли не совпадают</span>
+            </div>
+        </div>
+
+
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
                 <button type="submit" class="btn btn-default">Зарегистрироваться</button>

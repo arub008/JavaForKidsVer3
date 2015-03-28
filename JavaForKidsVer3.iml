@@ -20,6 +20,13 @@
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/spring-security-context.xml</file>
         </fileset>
+        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/conno/config/ApplicationConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/conno/config/DefaultDataSourceConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/conno/config/JpaConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/conno/config/SecurityConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/conno/config/WebMvcConfig.java</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
