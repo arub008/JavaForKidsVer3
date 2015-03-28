@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.List;
+
 @Repository
 @Transactional(readOnly = true)
 public class AccountRepository {
@@ -24,7 +26,13 @@ public class AccountRepository {
         return account;
     }
 
-    @Transactional
+
+   /* public Account loadAccountdata(){
+        return entityManager.createQuery("from Account")
+
+
+    }*/
+   /* @Transactional
     public Query get(String query) {
         try {
             return entityManager.createQuery(query);
@@ -33,7 +41,7 @@ public class AccountRepository {
         }
 
 
-    }
+    }*/
 
     public Account findByEmail(String email) {
         try {

@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Главная</a>
+            <a class="navbar-brand" href="/">Главная</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -26,9 +26,14 @@
                     <a href="/signin" th:href="@{/signin}">Войти</a>
                 </li>
                 <li th:if="${#authorization.expression('isAuthenticated()')}">
+                    <a href="/login" th:href="@{/login}">ЛК</a>
+                </li>
+                <li th:if="${#authorization.expression('isAuthenticated()')}">
                     <a href="/logout" th:href="@{#}" onclick="$('#form').submit();">Выйти</a>
                     <form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>
                 </li>
+
+
             </ul>
         </div>
         <!--/.nav-collapse -->

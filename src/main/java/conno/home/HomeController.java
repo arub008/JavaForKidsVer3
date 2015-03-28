@@ -19,26 +19,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@Scope("session")
 public class HomeController {
 
 
-
-
-
-    /*    WebContext ctx =
-                new WebContext(request, response, servletContext, request.getLocale());
-        ctx.setVariable("today", dateFormat.format(cal.getTime()));
-
-       process("home", ctx, response.getWriter());*/
-
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index() {
+
+        return "home/home";
+    }
+
+
+
+    /*@RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Principal principal) {
 
         return principal != null ? "home/homeSignedIn" : "home/homeNotSignedIn";
-    }
+    }*/
 
-    //public S
 
 }
