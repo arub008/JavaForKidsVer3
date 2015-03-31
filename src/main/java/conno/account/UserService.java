@@ -51,7 +51,7 @@ public class UserService implements UserDetailsService {
         return createUser(account);
     }
 
-    public UserDetails printUserByUsername(String username) throws UsernameNotFoundException {
+   /* public UserDetails printUserByUsername(String username) throws UsernameNotFoundException {
         Account account = accountRepository.findByEmail(username);
         if (account == null) {
             throw new UsernameNotFoundException("Такого пользователя не существует");
@@ -60,7 +60,7 @@ public class UserService implements UserDetailsService {
         }
         return createUser(account);
     }
-
+*/
 
     public void signin(Account account) {
         SecurityContextHolder.getContext().setAuthentication(authenticate(account));

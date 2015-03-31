@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head lang="ru">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+    <title>Level 1</title>
+</head>
+<body>
+
+<div th:replace="fragments/header2 :: header2"></div>
+
+<div class="container">
+    <div class="panel panel-body">
+
+        <h3>Уровень 1 - ПОГРУЖАЕМСЯ!</h3>
+
+        <code> Что такое Java?</code>
+
+        <p> Это язык программирования.</p>
+
+        <p> Когда он появился?
+            Первая версия вышла в 1995-м году.
+            У первой версии было кодовое имя oak.</p>
+
+        <p> Для чего разрабатывался?
+            Изначально использовался для программирования бытовых электронных устройств,
+            но позже стал применяться для
+            написания различных приложений и серверного программного обеспечения.
+        </p>
+
+        <code>
+            Почему Java? </code>
+
+        <p> Язык получил такое название в честь марки кофе Java, которая в свою очередь получила свое название от
+            одноимённого острова Ява, поэтому на официальной эмблеме языка изображена чашка с парящим кофе.
+        </p>
+
+        <code>Какими особенностями обладает язык Java</code>
+
+        <p> Во время компиляции программы транслируются в байт код. Он выполняется виртуальной машине Java - специальной
+            программой, которая обрабатывает этот байтовый код и передает инструкции оборудованию как интерпретатор.
+            В этом заключается большое преимущество языка Java, т.к. получается, что байт код программы полностью
+            независим
+            от операционной системы и оборудования. Это позволяет выполнять Java-приложения на любом устройстве, для
+            которого существует виртуальная машина Java.
+        </p>
+
+        <p> Язык Java очень активно применяется для создания мобильных приложений под операционную систему андроид.
+            При этом программа компилируется в нестандартный байт код для использования их виртуальной машиной Dalek
+            (фанаты
+            Doctor Who есть?).
+        </p>
+
+        <div class="jumbotron-orange">
+            <code>Какие же успешные проекты реализованы с применением Java?</code>
+
+            <h3> Это Amazon, eBay, linkedin, Yahoo и другие..
+            </h3>
+
+            <p>Хочешь в будущем создавать такие же крутые проекты - тогда продолжай обучение!
+            </p>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="7"
+             aria-valuemin="0" aria-valuemax="90" style="width:7%">Level1
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer">&copy;</div>
+</body>
+</html>

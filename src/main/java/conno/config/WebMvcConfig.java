@@ -48,6 +48,7 @@ class WebMvcConfig extends WebMvcConfigurationSupport {
         messageSource.setDefaultEncoding("UTF-8");
         messageSource.setCacheSeconds(5);
         return messageSource;
+
     }
 
     @Bean

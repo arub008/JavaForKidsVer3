@@ -1168,6 +1168,10 @@ pre code {
         max-width: 1170px
     }
 
+    .container-small {
+        max-width: 600px;
+    }
+
     .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11 {
         float: left
     }
@@ -4486,7 +4490,8 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
 .jumbotron-orange {
     padding: 30px;
     margin-bottom: 30px;
-    font-size: 21px;
+    font-size: 16px;
+    border-radius: 10px;
     font-weight: 200;
     line-height: 2.1428571435;
     color: inherit;
@@ -4496,11 +4501,25 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
 .jumbotron-blue {
     padding: 30px;
     margin-bottom: 0px;
-    font-size: 21px;
+    border-radius: 10px;
+    font-size: 16px;
     font-weight: 200;
     line-height: 2.1428571435;
     color: inherit;
     background-color: #bce8f1;
+}
+
+.jumbotron-white {
+    padding: 30px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: inherit;
+    background-color: #ffffff;
+
+    border-top: 1px solid #ddd
 }
 
 .jumbotron h1 {
@@ -4516,9 +4535,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
     border-radius: 6px
 }
 
-.container .jumbotron-orange {
-    border-radius: 6px
-}
+
 
 @media screen and (min-width: 768px) {
     .jumbotron {
@@ -4536,8 +4553,8 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
     }
 
     .jumbotron-orange {
-        padding-top: 48px;
-        padding-bottom: 48px
+        padding-top: 25px;
+        padding-bottom: 25px
     }
 
     .container .jumbotron-orange {
@@ -4910,7 +4927,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 
 .panel-body {
-    padding: 15px
+    padding: 35px;
+
 }
 
 .panel-body:before, .panel-body:after {
@@ -4978,12 +4996,13 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 
 .panel-footer {
-    padding: 10px 15px;
-    background-color: #f5f5f5;
+    padding: 30px 15px;
+    background-color: #ffffff;
     border-top: 1px solid #ddd;
     min-height: 70px;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px
+
 }
 
 .panel-group .panel {

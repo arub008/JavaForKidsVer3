@@ -11,9 +11,10 @@
 </head>
 <body>
 
-<div th:replace="fragments/header :: header">&nbsp;</div>
-<div class="jumbotron-blue">
-    <div class="container">
+<div th:replace="fragments/header2 :: header2">&nbsp;</div>
+
+<div class="container">
+    <div class="jumbotron-blue">
         <!-- /* Handle the flash message */-->
         <th:block th:if="${message != null}">
             <!-- /* The message code is returned from the @Controller */ -->
@@ -24,7 +25,7 @@
 
 
         <ul>
-            <li><a href="#">Login___Level 1</a></li>
+            <li><a href="/lesson/level1">Level 1</a></li>
             <li><a href="#">Level 2</a></li>
             <li><a href="#">Level 3</a></li>
             <li>
@@ -32,7 +33,7 @@
             </li>
         </ul>
     </div>
-</div>
+
 
 <div class="jumbotron-orange"> Данные о пользователе
     <div th:if="${#httpServletRequest.remoteUser != null}">
@@ -45,7 +46,8 @@
 </div>
 <div class="jumbotron">Другие данные</div>
 
-<div th:replace="fragments/footer :: footer">&copy;</div>
 
+</div>
+<div th:replace="fragments/footer :: footer">&copy;</div>
 </body>
 </html>

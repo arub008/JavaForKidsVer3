@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          th:href="@{/resources/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<!-- Static navbar -->
+<div th:fragment="header2">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Главная</a></li>
+                        <li class="active"><a href="/login" th:href="@{/login}">Начать обучение</a></li>
+                        <li><a href="#about">Правила</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li th:if="${#authorization.expression('!isAuthenticated()')}">
+                            <a href="/signin" th:href="@{/signin}">Войти</a>
+                        </li>
+                        <li th:if="${#authorization.expression('isAuthenticated()')}">
+                            <a href="/login" th:href="@{/login}">ЛК</a>
+                        </li>
+                        <li th:if="${#authorization.expression('isAuthenticated()')}">
+                            <a href="/logout" th:href="@{#}" onclick="$('#form').submit();">Выйти</a>
+
+                            <form style="visibility: hidden" id="form" method="post" action="#"
+                                  th:action="@{/logout}"></form>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </nav>
+    </div>
+</div>
+<!--/.nav-collapse -->
+
+
+</body>
+</html>
